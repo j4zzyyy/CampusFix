@@ -1,0 +1,16 @@
+{% extends "base.html" %}{% block title %}Report an issue{% endblock %}
+{% block content %}
+<div class="back-link"><a href="{{ url_for('dashboard') }}">← Back to overview</a></div>
+<div class="form-page-head"><span class="eyebrow">CAMPUS SUPPORT</span><h1>Report an issue<span class="heading-period">.</span></h1><p>Tell us what needs attention. We’ll route it to the right team.</p></div>
+<div class="form-layout"><form method="post" enctype="multipart/form-data" class="panel report-form">
+  <div class="form-section-title"><span>01</span><div><b>Issue details</b><small>Give us a clear picture of the problem.</small></div></div>
+  <label>Issue title <span class="required">*</span><input name="title" placeholder="e.g. Ceiling fan not working" maxlength="100" required></label>
+  <div class="field-row"><label>Category <span class="required">*</span><select name="category" required>{% for x in categories %}<option>{{ x }}</option>{% endfor %}</select></label><label>Campus location <span class="required">*</span><input name="location" placeholder="e.g. Block B, Room 204" required></label></div>
+  <label>Description <span class="required">*</span><textarea name="description" rows="5" placeholder="Describe what happened and any useful details..." maxlength="1200" required></textarea><small class="field-hint">Tip: Include when you noticed it and whether it affects others.</small></label>
+  <div class="form-section-title section-spaced"><span>02</span><div><b>Add a photo <small class="optional">OPTIONAL</small></b><small>A photo can help the team understand the issue faster.</small></div></div>
+  <label class="upload-box"><input type="file" name="photo" accept=".jpg,.jpeg,.png,.webp" onchange="document.getElementById('file-name').textContent=this.files[0]?.name || 'JPG, PNG or WEBP · Max 5 MB'"><span class="upload-icon">↑</span><b>Click to upload an image</b><small id="file-name">JPG, PNG or WEBP · Max 5 MB</small></label>
+  <div class="smart-note"><span>✧</span><div><b>Smart routing is enabled</b><p>CampusFix will suggest a department and urgency level based on your report.</p></div></div>
+  <div class="form-actions"><a href="{{ url_for('dashboard') }}" class="btn btn-ghost">Cancel</a><button class="btn btn-primary">Submit complaint <span>→</span></button></div>
+</form>
+<aside class="form-aside"><div class="aside-card"><span class="aside-icon">✦</span><h3>What happens next?</h3><div class="step-list"><div><i>1</i><span><b>Report received</b><small>You’ll get a unique ticket ID.</small></span></div><div><i>2</i><span><b>Team assigned</b><small>The right department is notified.</small></span></div><div><i>3</i><span><b>Issue resolved</b><small>Track progress from your portal.</small></span></div></div></div><div class="aside-tip"><b>Need urgent help?</b><p>For immediate safety concerns, contact campus security or the appropriate campus authority directly. Do not wait for an app response.</p></div></aside></div>
+{% endblock %}

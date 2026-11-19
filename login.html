@@ -1,0 +1,11 @@
+{% extends "base.html" %}{% block title %}Welcome{% endblock %}
+{% block content %}
+<div class="login-layout">
+  <div class="login-visual"><div class="visual-orb orb-one"></div><div class="visual-orb orb-two"></div><div class="visual-content"><div class="mini-pill"><span class="live-dot"></span> THE SMARTER CAMPUS ERA</div><h1>Small fixes.<br><em>Big impact.</em></h1><p>A connected campus where every issue is heard, tracked and resolved.</p><div class="visual-stats"><div><b>01</b><span>Report</span></div><i></i><div><b>02</b><span>Resolve</span></div><i></i><div><b>03</b><span>Improve</span></div></div><div class="floating-ticket"><span class="ticket-check">✓</span><div><b>Issue resolved</b><small>Block B · Electrical</small></div><span class="ticket-time">Just now</span></div></div></div>
+  <div class="login-panel"><a class="brand login-brand" href="#"><span class="brand-mark">C</span><span>Campus<span class="brand-light">Fix</span><small>SMART CAMPUS PLATFORM</small></span></a><div class="login-heading"><span class="eyebrow">WELCOME BACK</span><h2>Sign in to your<br>workspace</h2><p>Access your campus issue management portal.</p></div>
+    <form method="post" class="form-stack"><label>Email address<input type="email" name="email" placeholder="you@college.edu" required value="student@campusfix.demo"></label><label>Password<input type="password" name="password" placeholder="Enter your password" required value="student123"></label><button class="btn btn-primary btn-full">Sign in <span>→</span></button></form>
+    <div class="demo-box"><b>Demo accounts</b><div><span>Student</span><code>student@campusfix.demo</code><code>student123</code></div><div><span>Admin</span><code>admin@campusfix.demo</code><code>admin123</code></div><div><span>Staff</span><code>electrical@campusfix.demo</code><code>team123</code></div></div>
+    <p class="login-foot">A prototype for better campus experiences.</p>
+  </div>
+</div>
+{% endblock %}
